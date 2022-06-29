@@ -1,0 +1,57 @@
+<%- include("partials/header"); -%>
+<div class="text-center">
+  
+  <form class="form-register" action="/user/home" method="POST">
+    <h1 class="mb-3 font-weight-normal">Registro</h1>
+    
+    <label for="name" class="sr-only">Nombre</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      class="form-control"
+      placeholder="Nombre"
+      required
+      autofocus
+    />
+    
+    <label for="password" class="sr-only">Contraseña</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      class="form-control"
+      placeholder="Contraseña"
+      required
+    />
+    <label for="password" class="sr-only">Confirmar contraseña</label>
+    <input
+      type="password"
+      id="password_confirm"
+      name="password_confirm"
+      class="form-control"
+      placeholder="Confirmar contraseña"
+      required
+    /><br />
+
+    <input
+      type="submit"
+      value="Registrarse"
+      class="btn btn-lg btn-primary btn-block"
+    >
+
+    </input>
+    <p class="help-block mb-3 text-muted error-field">
+      <% if (typeof errors != 'undefined') { %><% errors.forEach(error => { %>
+      <p class="help-block  mb-3 text-muted error-field">*<%= error.message %></p>
+      <% }) %> <% } %>
+    <!-- </p> -->
+    <!-- <p class="help-block  mb-3 text-muted"> -->
+      <!-- ¿Ya estás registrado? -->
+      <!-- <a href="/user/login"> Iniciar Sesión </a> -->
+    <!-- </p> -->
+    
+  </form>
+</div>
+
+<%- include("partials/footer"); -%>

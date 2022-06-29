@@ -1,0 +1,51 @@
+<%- include("partials/header"); -%>
+
+<div class="text-center">
+  <p >
+    <% if(messages.success_msg) { %>
+    <p class="help-block  mb-3 text-muted"><%= messages.success_msg %></p>
+    <% } %>
+  </p>
+  <p>
+    <% if (messages.error) { %>
+    <p class="help-block  mb-3 text-muted"><%= messages.error %></p>
+    <% } %>
+  </p>
+
+  <form class="form-signin" action="/user/login" method="POST">
+    <h1 class="h3 mb-3 font-weight-normal">Iniciar Sesión</h1>
+
+    
+
+
+    <label for="name" class="sr-only">Name</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      class="form-control"
+      placeholder="Nombre"
+      required
+      autofocus
+    />
+    <label for="password" class="sr-only">Password</label>
+    <input
+      type="password"
+      id="inputPassword"
+      name="password"
+      class="form-control"
+      placeholder="Contraseña"
+      required
+    />
+    <br />
+    <input type="submit" value="Iniciar Sesión" class="btn btn-lg btn-primary btn-block">
+     
+    </input>
+    <p class="help-block mt-5 mb-3 text-muted">
+      ¿No tienes cuenta?
+      <a href="/user/register"> Registrarse </a>
+    </p>
+  </form>
+</div>
+
+<%- include("partials/footer"); -%>
